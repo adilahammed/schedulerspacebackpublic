@@ -12,9 +12,11 @@ const imageupload=require('./routes/imageupload')
 const profile=require('./routes/profile')
 const notification=require('./routes/notification')
 
+mongodburl=`mongodb+srv://adil:${process.env.mongodburl}@cluster0.vocpz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+
 
 //mongoose
-mongoose.connect(process.env.mongodburl).then(()=>{
+mongoose.connect(mongodburl).then(()=>{
     console.log('mongoose connected')
 }).catch((err)=>{
     console.log(err);
